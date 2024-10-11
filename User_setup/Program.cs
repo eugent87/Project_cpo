@@ -1,3 +1,6 @@
+using System.Text.Json;
+using User_Interface.Main_page;
+
 namespace User_setup
 {
     internal static class Program
@@ -8,10 +11,13 @@ namespace User_setup
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            string json_path = "C:/Users/glkru/Source/Repos/Gandoler/Project_cpo/config.json";
+
+
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login_page());
+            long ID = 314627387;//менять
+
+            Application.Run(new Main_page(json_path,ID));
         }
     }
 }
