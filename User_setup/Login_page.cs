@@ -1,8 +1,8 @@
 namespace User_setup
 {
-    public partial class Form1 : Form
+    public partial class Login_page : Form
     {
-        public Form1()
+        public Login_page()
         {
             InitializeComponent();
         }

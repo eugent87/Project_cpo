@@ -1,6 +1,6 @@
 ﻿namespace User_setup
 {
-    partial class Form1
+    partial class Login_page
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_page));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtLogin = new TextBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -150,13 +150,13 @@
             guna2CircleButton1.ForeColor = Color.White;
             guna2CircleButton1.Location = new Point(-149, -39);
             guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CircleButton1.Size = new Size(446, 496);
             guna2CircleButton1.TabIndex = 10;
             guna2CircleButton1.Click += guna2CircleButton1_Click;
             // 
-            // Form1
+            // Login_page
             // 
             AutoScaleDimensions = new SizeF(7F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -176,7 +176,7 @@
             Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point, 204);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Form1";
+            Name = "Login_page";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Страница регистрации";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
