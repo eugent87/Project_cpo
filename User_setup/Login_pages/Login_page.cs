@@ -31,5 +31,10 @@ namespace User_setup
                 txtLogin.Enabled = true;
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
