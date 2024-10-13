@@ -21,9 +21,9 @@ namespace User_setup
         Connect_class connec_Class = new Connect_class();
 
 
-        public Main_page(string connect_path, long iD)
+        public Main_page( long iD)
         {
-            get_Data_Table_Class = new Get_data_table_Class(connect_path, connec_Class);
+            get_Data_Table_Class = new Get_data_table_Class(json_path_class.get_absolut_path(), connec_Class);
             InitializeComponent();
             ID = iD;
         }

@@ -7,10 +7,10 @@ namespace User_setup
     public partial class Login_page : Form
     {
         Connect_class connect_Class = new Connect_class();
-        static string absolutePath = "";
-        public Login_page(string _absolutePath)
+        
+        public Login_page()
         {
-            absolutePath = _absolutePath;
+            
             InitializeComponent();
         }
 
@@ -59,12 +59,17 @@ namespace User_setup
             bool login = Login_class.Login(long.Parse(txtLogin.Text), txtPassword.Text, connect_Class);
             if (login)
             {
-                new Main_page(absolutePath, long.Parse(txtLogin.Text));
+                new Main_page( long.Parse(txtLogin.Text));
                 this.Close();
             }
         }
 
         private void btn_Register_Click(object sender, EventArgs e)
+        {
+            new Registr_page();
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
         {
 
         }

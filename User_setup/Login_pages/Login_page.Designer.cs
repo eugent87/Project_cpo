@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_page));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtLogin = new TextBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -41,23 +41,25 @@
             btn_Register = new Button();
             btn_Clear = new Button();
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Close_button).BeginInit();
             SuspendLayout();
             // 
             // txtLogin
             // 
-            txtLogin.Location = new Point(432, 176);
+            txtLogin.Location = new Point(432, 201);
             txtLogin.Name = "txtLogin";
             txtLogin.Size = new Size(224, 22);
             txtLogin.TabIndex = 0;
+            txtLogin.TextChanged += txtLogin_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Enabled = false;
             label1.Font = new Font("Verdana", 18.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            label1.Location = new Point(325, 168);
+            label1.Location = new Point(325, 193);
             label1.Name = "label1";
             label1.Size = new Size(101, 31);
             label1.TabIndex = 1;
@@ -66,7 +68,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(432, 39);
+            pictureBox1.Location = new Point(432, 64);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(224, 106);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -78,7 +80,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Verdana", 18.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(306, 225);
+            label2.Location = new Point(306, 250);
             label2.Name = "label2";
             label2.Size = new Size(120, 31);
             label2.TabIndex = 3;
@@ -86,7 +88,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(432, 234);
+            txtPassword.Location = new Point(432, 259);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(224, 22);
             txtPassword.TabIndex = 4;
@@ -108,7 +110,7 @@
             // Show_pass
             // 
             Show_pass.AutoSize = true;
-            Show_pass.Location = new Point(662, 236);
+            Show_pass.Location = new Point(662, 261);
             Show_pass.Name = "Show_pass";
             Show_pass.Size = new Size(132, 18);
             Show_pass.TabIndex = 6;
@@ -119,7 +121,7 @@
             // btn_Login
             // 
             btn_Login.BackColor = Color.FromArgb(105, 214, 172);
-            btn_Login.Location = new Point(432, 299);
+            btn_Login.Location = new Point(432, 324);
             btn_Login.Name = "btn_Login";
             btn_Login.Size = new Size(110, 43);
             btn_Login.TabIndex = 7;
@@ -130,7 +132,7 @@
             // btn_Register
             // 
             btn_Register.BackColor = Color.FromArgb(105, 214, 172);
-            btn_Register.Location = new Point(546, 299);
+            btn_Register.Location = new Point(546, 324);
             btn_Register.Name = "btn_Register";
             btn_Register.Size = new Size(110, 43);
             btn_Register.TabIndex = 8;
@@ -140,7 +142,7 @@
             // 
             // btn_Clear
             // 
-            btn_Clear.Location = new Point(694, 168);
+            btn_Clear.Location = new Point(694, 193);
             btn_Clear.Name = "btn_Clear";
             btn_Clear.Size = new Size(74, 30);
             btn_Clear.TabIndex = 9;
@@ -162,12 +164,22 @@
             guna2CircleButton1.ImeMode = ImeMode.Off;
             guna2CircleButton1.Location = new Point(-149, -39);
             guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CircleButton1.Size = new Size(446, 496);
             guna2CircleButton1.TabIndex = 10;
-            guna2CircleButton1.Visible = false;
             guna2CircleButton1.Click += guna2CircleButton1_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Enabled = false;
+            label3.Font = new Font("Yu Gothic UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            label3.Location = new Point(511, 23);
+            label3.Name = "label3";
+            label3.Size = new Size(69, 32);
+            label3.TabIndex = 21;
+            label3.Text = "Вход";
             // 
             // Login_page
             // 
@@ -175,6 +187,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             ClientSize = new Size(796, 420);
+            Controls.Add(label3);
             Controls.Add(guna2CircleButton1);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Register);
@@ -211,5 +224,6 @@
         private Button btn_Register;
         private Button btn_Clear;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Label label3;
     }
 }

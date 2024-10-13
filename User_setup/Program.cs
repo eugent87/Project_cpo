@@ -19,7 +19,7 @@ namespace User_setup
             ApplicationConfiguration.Initialize();
             long ID = 314627387;//менять
 
-            Application.Run(new Login_page(absolutePath));
+            Application.Run(new Login_page());
            
         }
     }

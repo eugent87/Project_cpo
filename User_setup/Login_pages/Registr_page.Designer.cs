@@ -1,6 +1,6 @@
 ﻿namespace User_Interface.Login_pages
 {
-    partial class Registr
+    partial class Registr_page
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registr));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registr_page));
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             Close_button = new PictureBox();
             btn_Register = new Button();
@@ -38,6 +38,7 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             txtLogin = new TextBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)Close_button).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -45,6 +46,7 @@
             // guna2CircleButton1
             // 
             guna2CircleButton1.CausesValidation = false;
+            guna2CircleButton1.DefaultAutoSize = true;
             guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
             guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -58,9 +60,8 @@
             guna2CircleButton1.Name = "guna2CircleButton1";
             guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton1.Size = new Size(446, 496);
+            guna2CircleButton1.Size = new Size(26, 10);
             guna2CircleButton1.TabIndex = 11;
-            guna2CircleButton1.Visible = false;
             // 
             // Close_button
             // 
@@ -81,6 +82,7 @@
             btn_Register.TabIndex = 19;
             btn_Register.Text = "Регистрация";
             btn_Register.UseVisualStyleBackColor = false;
+            btn_Register.Click += btn_Register_Click;
             // 
             // txtPassword
             // 
@@ -129,11 +131,23 @@
             txtLogin.Size = new Size(224, 23);
             txtLogin.TabIndex = 13;
             // 
-            // Registr
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Enabled = false;
+            label3.Font = new Font("Yu Gothic UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            label3.Location = new Point(500, 23);
+            label3.Name = "label3";
+            label3.Size = new Size(154, 32);
+            label3.TabIndex = 20;
+            label3.Text = "Регистрация";
+            // 
+            // Registr_page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(796, 420);
+            Controls.Add(label3);
             Controls.Add(btn_Register);
             Controls.Add(txtPassword);
             Controls.Add(label2);
@@ -143,7 +157,7 @@
             Controls.Add(Close_button);
             Controls.Add(guna2CircleButton1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Registr";
+            Name = "Registr_page";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registr";
             ((System.ComponentModel.ISupportInitialize)Close_button).EndInit();
@@ -162,5 +176,6 @@
         private PictureBox pictureBox1;
         private Label label1;
         private TextBox txtLogin;
+        private Label label3;
     }
 }
