@@ -46,10 +46,10 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             Data_table = new Guna.UI2.WinForms.Guna2DataGridView();
-            richTextBox1 = new RichTextBox();
-            richTextBox2 = new RichTextBox();
-            richTextBox3 = new RichTextBox();
-            richTextBox4 = new RichTextBox();
+            UserName_TextBox = new RichTextBox();
+            Name_TextBox = new RichTextBox();
+            Date_TextBox = new RichTextBox();
+            Interests_TextBox = new RichTextBox();
             Username = new Label();
             Interests = new Label();
             Date_of_birth = new Label();
@@ -80,6 +80,7 @@
             Add_button.Size = new Size(75, 50);
             Add_button.TabIndex = 1;
             Add_button.Text = "Add";
+            Add_button.Click += Add_button_Click_1;
             // 
             // Refresh_button
             // 
@@ -195,44 +196,48 @@
             Data_table.ThemeStyle.RowsStyle.Height = 25;
             Data_table.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             Data_table.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            Data_table.Click += Data_table_Click;
             // 
-            // richTextBox1
+            // UserName_TextBox
             // 
-            richTextBox1.Font = new Font("Segoe UI Black", 18.75F, FontStyle.Bold | FontStyle.Italic);
-            richTextBox1.Location = new Point(12, 103);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(318, 52);
-            richTextBox1.TabIndex = 9;
-            richTextBox1.Text = "";
-            richTextBox1.TextChanged += richTextBox1_TextChanged;
+            UserName_TextBox.Font = new Font("Segoe UI Black", 18.75F, FontStyle.Bold | FontStyle.Italic);
+            UserName_TextBox.Location = new Point(12, 103);
+            UserName_TextBox.Name = "UserName_TextBox";
+            UserName_TextBox.Size = new Size(318, 52);
+            UserName_TextBox.TabIndex = 9;
+            UserName_TextBox.Text = "";
+            UserName_TextBox.TextChanged += richTextBox1_TextChanged;
+            UserName_TextBox.KeyPress += UserName_TextBox_KeyPress;
             // 
-            // richTextBox2
+            // Name_TextBox
             // 
-            richTextBox2.Font = new Font("Segoe UI Black", 18.75F, FontStyle.Bold | FontStyle.Italic);
-            richTextBox2.Location = new Point(12, 186);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(318, 52);
-            richTextBox2.TabIndex = 10;
-            richTextBox2.Text = "";
+            Name_TextBox.Font = new Font("Segoe UI Black", 18.75F, FontStyle.Bold | FontStyle.Italic);
+            Name_TextBox.Location = new Point(12, 186);
+            Name_TextBox.Name = "Name_TextBox";
+            Name_TextBox.Size = new Size(318, 52);
+            Name_TextBox.TabIndex = 10;
+            Name_TextBox.Text = "";
+            Name_TextBox.KeyPress += Name_TextBox_KeyPress;
             // 
-            // richTextBox3
+            // Date_TextBox
             // 
-            richTextBox3.Font = new Font("Segoe UI Black", 18.75F, FontStyle.Bold | FontStyle.Italic);
-            richTextBox3.Location = new Point(12, 269);
-            richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(318, 52);
-            richTextBox3.TabIndex = 11;
-            richTextBox3.Text = "";
-            richTextBox3.KeyPress += richTextBox3_KeyPress;
-            richTextBox3.Leave += richTextBox3_Leave;
+            Date_TextBox.Font = new Font("Segoe UI Black", 18.75F, FontStyle.Bold | FontStyle.Italic);
+            Date_TextBox.Location = new Point(12, 269);
+            Date_TextBox.Name = "Date_TextBox";
+            Date_TextBox.Size = new Size(318, 52);
+            Date_TextBox.TabIndex = 11;
+            Date_TextBox.Text = "";
+            Date_TextBox.KeyPress += richTextBox3_KeyPress;
+            Date_TextBox.Leave += richTextBox3_Leave;
             // 
-            // richTextBox4
+            // Interests_TextBox
             // 
-            richTextBox4.Location = new Point(12, 352);
-            richTextBox4.Name = "richTextBox4";
-            richTextBox4.Size = new Size(318, 52);
-            richTextBox4.TabIndex = 12;
-            richTextBox4.Text = "";
+            Interests_TextBox.Location = new Point(12, 352);
+            Interests_TextBox.Name = "Interests_TextBox";
+            Interests_TextBox.Size = new Size(318, 52);
+            Interests_TextBox.TabIndex = 12;
+            Interests_TextBox.Text = "";
+            Interests_TextBox.KeyPress += Interests_TextBox_KeyPress;
             // 
             // Username
             // 
@@ -295,6 +300,7 @@
             Delete_button.Size = new Size(75, 50);
             Delete_button.TabIndex = 17;
             Delete_button.Text = "Delete";
+            Delete_button.Click += Delete_button_Click;
             // 
             // Main_page
             // 
@@ -307,10 +313,10 @@
             Controls.Add(Interests);
             Controls.Add(Date_of_birth);
             Controls.Add(Username);
-            Controls.Add(richTextBox4);
-            Controls.Add(richTextBox3);
-            Controls.Add(richTextBox2);
-            Controls.Add(richTextBox1);
+            Controls.Add(Interests_TextBox);
+            Controls.Add(Date_TextBox);
+            Controls.Add(Name_TextBox);
+            Controls.Add(UserName_TextBox);
             Controls.Add(Data_table);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
@@ -336,10 +342,10 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2DataGridView Data_table;
-        private RichTextBox richTextBox1;
-        private RichTextBox richTextBox2;
-        private RichTextBox richTextBox3;
-        private RichTextBox richTextBox4;
+        private RichTextBox UserName_TextBox;
+        private RichTextBox Name_TextBox;
+        private RichTextBox Date_TextBox;
+        private RichTextBox Interests_TextBox;
         private Label Username;
         private Label Interests;
         private Label Date_of_birth;

@@ -13,11 +13,12 @@ namespace User_Interface.Main_page
 {
     internal class Get_data_table_Class
     {
-        Connect_class connec_Class = new Connect_class();
+        Connect_class connec_Class;
 
 
-        public Get_data_table_Class(string Con_path)
+        public Get_data_table_Class(string Con_path, Connect_class connec_Class_im)
         {
+            this.connec_Class  = connec_Class_im;
             connec_Class.LoadConfig(Con_path);
             
         }
