@@ -1,9 +1,16 @@
+using System.Windows.Forms;
+using User_Interface;
+using User_Interface.Login_pages;
+
 namespace User_setup
 {
     public partial class Login_page : Form
     {
-        public Login_page()
+        Connect_class connect_Class = new Connect_class();
+        static string absolutePath = "";
+        public Login_page(string _absolutePath)
         {
+            absolutePath = _absolutePath;
             InitializeComponent();
         }
 
@@ -33,6 +40,31 @@ namespace User_setup
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Close_button_MouseLeave(object sender, EventArgs e)
+        {
+            Close_button.BackColor = Color.LightGray;
+        }
+
+        private void Close_button_MouseEnter(object sender, EventArgs e)
+        {
+            Close_button.BackColor = Color.Red;
+        }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            bool login = Login_class.Login(long.Parse(txtLogin.Text), txtPassword.Text, connect_Class);
+            if (login)
+            {
+                new Main_page(absolutePath, long.Parse(txtLogin.Text));
+                this.Close();
+            }
+        }
+
+        private void btn_Register_Click(object sender, EventArgs e)
         {
 
         }

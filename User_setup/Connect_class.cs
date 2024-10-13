@@ -5,7 +5,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Windows.Forms;
 
-namespace User_Interface.Main_page
+namespace User_Interface
 {
     internal class Connect_class
     {
@@ -45,7 +45,7 @@ namespace User_Interface.Main_page
 
                 if (config != null)
                 {
-                    
+
                     Server = config.Server ?? "ERROR";
                     Database = config.Database ?? "ERROR";
                     User = config.User ?? "ERROR";
@@ -83,7 +83,7 @@ namespace User_Interface.Main_page
 
         public MySqlConnection Get_connect()
         {
-            string connectionString = $"Server={this.Server};Database={this.Database};User ID={this.User};Password={this.Password};Port={this.Port};";
+            string connectionString = $"Server={Server};Database={Database};User ID={User};Password={Password};Port={Port};";
             try
             {
                 connection = new MySqlConnection(connectionString);
@@ -107,7 +107,7 @@ namespace User_Interface.Main_page
                 if (connection != null && connection.State == System.Data.ConnectionState.Open)
                 {
                     connection.Close();
-                    
+
                     Console.WriteLine("Соединение успешно закрыто.");
                 }
             }
