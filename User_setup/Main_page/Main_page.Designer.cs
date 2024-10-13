@@ -38,6 +38,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Add_button = new Guna.UI2.WinForms.Guna2GradientButton();
             Refresh_button = new Guna.UI2.WinForms.Guna2GradientButton();
             Update_button = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -48,6 +50,11 @@
             richTextBox2 = new RichTextBox();
             richTextBox3 = new RichTextBox();
             richTextBox4 = new RichTextBox();
+            Username = new Label();
+            Interests = new Label();
+            Date_of_birth = new Label();
+            Name_label = new Label();
+            Delete_button = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Data_table).BeginInit();
@@ -65,12 +72,12 @@
             Add_button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             Add_button.FillColor = Color.FromArgb(192, 255, 165);
             Add_button.FillColor2 = Color.FromArgb(105, 214, 172);
-            Add_button.Font = new Font("Segoe UI", 9F);
+            Add_button.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             Add_button.ForeColor = Color.Black;
-            Add_button.Location = new Point(12, 425);
+            Add_button.Location = new Point(12, 441);
             Add_button.Name = "Add_button";
             Add_button.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            Add_button.Size = new Size(104, 51);
+            Add_button.Size = new Size(75, 50);
             Add_button.TabIndex = 1;
             Add_button.Text = "Add";
             // 
@@ -86,12 +93,12 @@
             Refresh_button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             Refresh_button.FillColor = Color.FromArgb(192, 255, 165);
             Refresh_button.FillColor2 = Color.FromArgb(105, 214, 172);
-            Refresh_button.Font = new Font("Segoe UI", 9F);
+            Refresh_button.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic);
             Refresh_button.ForeColor = Color.Black;
-            Refresh_button.Location = new Point(232, 425);
+            Refresh_button.Location = new Point(174, 441);
             Refresh_button.Name = "Refresh_button";
             Refresh_button.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            Refresh_button.Size = new Size(104, 51);
+            Refresh_button.Size = new Size(75, 50);
             Refresh_button.TabIndex = 2;
             Refresh_button.Text = "Refresh";
             // 
@@ -107,12 +114,12 @@
             Update_button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             Update_button.FillColor = Color.FromArgb(192, 255, 165);
             Update_button.FillColor2 = Color.FromArgb(105, 214, 172);
-            Update_button.Font = new Font("Segoe UI", 9F);
+            Update_button.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic);
             Update_button.ForeColor = Color.Black;
-            Update_button.Location = new Point(122, 425);
+            Update_button.Location = new Point(93, 441);
             Update_button.Name = "Update_button";
             Update_button.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            Update_button.Size = new Size(104, 51);
+            Update_button.Size = new Size(75, 50);
             Update_button.TabIndex = 3;
             Update_button.Text = "Update";
             // 
@@ -191,36 +198,103 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(12, 94);
+            richTextBox1.Font = new Font("Segoe UI Black", 18.75F, FontStyle.Bold | FontStyle.Italic);
+            richTextBox1.Location = new Point(12, 103);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(262, 52);
+            richTextBox1.Size = new Size(318, 52);
             richTextBox1.TabIndex = 9;
             richTextBox1.Text = "";
             richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // richTextBox2
             // 
-            richTextBox2.Location = new Point(12, 163);
+            richTextBox2.Font = new Font("Segoe UI Black", 18.75F, FontStyle.Bold | FontStyle.Italic);
+            richTextBox2.Location = new Point(12, 186);
             richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(262, 52);
+            richTextBox2.Size = new Size(318, 52);
             richTextBox2.TabIndex = 10;
             richTextBox2.Text = "";
             // 
             // richTextBox3
             // 
-            richTextBox3.Location = new Point(12, 262);
+            richTextBox3.Font = new Font("Segoe UI Black", 18.75F, FontStyle.Bold | FontStyle.Italic);
+            richTextBox3.Location = new Point(12, 269);
             richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(262, 52);
+            richTextBox3.Size = new Size(318, 52);
             richTextBox3.TabIndex = 11;
             richTextBox3.Text = "";
+            richTextBox3.KeyPress += richTextBox3_KeyPress;
+            richTextBox3.Leave += richTextBox3_Leave;
             // 
             // richTextBox4
             // 
-            richTextBox4.Location = new Point(12, 349);
+            richTextBox4.Location = new Point(12, 352);
             richTextBox4.Name = "richTextBox4";
-            richTextBox4.Size = new Size(262, 52);
+            richTextBox4.Size = new Size(318, 52);
             richTextBox4.TabIndex = 12;
             richTextBox4.Text = "";
+            // 
+            // Username
+            // 
+            Username.AutoSize = true;
+            Username.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            Username.Location = new Point(12, 75);
+            Username.Name = "Username";
+            Username.Size = new Size(105, 25);
+            Username.TabIndex = 13;
+            Username.Text = "Username";
+            Username.Click += label1_Click;
+            // 
+            // Interests
+            // 
+            Interests.AutoSize = true;
+            Interests.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            Interests.Location = new Point(12, 324);
+            Interests.Name = "Interests";
+            Interests.Size = new Size(93, 25);
+            Interests.TabIndex = 15;
+            Interests.Text = "Interests";
+            // 
+            // Date_of_birth
+            // 
+            Date_of_birth.AutoSize = true;
+            Date_of_birth.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            Date_of_birth.Location = new Point(12, 241);
+            Date_of_birth.Name = "Date_of_birth";
+            Date_of_birth.Size = new Size(132, 25);
+            Date_of_birth.TabIndex = 14;
+            Date_of_birth.Text = "Date of birth";
+            // 
+            // Name_label
+            // 
+            Name_label.AutoSize = true;
+            Name_label.Font = new Font("Segoe UI Black", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            Name_label.Location = new Point(12, 158);
+            Name_label.Name = "Name_label";
+            Name_label.Size = new Size(68, 25);
+            Name_label.TabIndex = 16;
+            Name_label.Text = "Name";
+            // 
+            // Delete_button
+            // 
+            Delete_button.AutoRoundedCorners = true;
+            Delete_button.BorderRadius = 24;
+            Delete_button.CustomizableEdges = customizableEdges7;
+            Delete_button.DisabledState.BorderColor = Color.DarkGray;
+            Delete_button.DisabledState.CustomBorderColor = Color.DarkGray;
+            Delete_button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            Delete_button.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            Delete_button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            Delete_button.FillColor = Color.FromArgb(192, 255, 165);
+            Delete_button.FillColor2 = Color.FromArgb(105, 214, 172);
+            Delete_button.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic);
+            Delete_button.ForeColor = Color.Black;
+            Delete_button.Location = new Point(255, 441);
+            Delete_button.Name = "Delete_button";
+            Delete_button.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            Delete_button.Size = new Size(75, 50);
+            Delete_button.TabIndex = 17;
+            Delete_button.Text = "Delete";
             // 
             // Main_page
             // 
@@ -228,6 +302,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             ClientSize = new Size(729, 503);
+            Controls.Add(Delete_button);
+            Controls.Add(Name_label);
+            Controls.Add(Interests);
+            Controls.Add(Date_of_birth);
+            Controls.Add(Username);
             Controls.Add(richTextBox4);
             Controls.Add(richTextBox3);
             Controls.Add(richTextBox2);
@@ -247,6 +326,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)Data_table).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -260,5 +340,10 @@
         private RichTextBox richTextBox2;
         private RichTextBox richTextBox3;
         private RichTextBox richTextBox4;
+        private Label Username;
+        private Label Interests;
+        private Label Date_of_birth;
+        private Label Name_label;
+        private Guna.UI2.WinForms.Guna2GradientButton Delete_button;
     }
 }
