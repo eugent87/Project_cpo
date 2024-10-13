@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using System.Text.Json;
 using User_Interface.Main_page;
 
@@ -11,13 +12,14 @@ namespace User_setup
         [STAThread]
         static void Main()
         {
-            string json_path = "C:/Users/glkru/Source/Repos/Gandoler/Project_cpo/config.json";
+            string relativePath = "Data/Data_config_for_app.json"; // Относительный путь
+            string absolutePath = Path.GetFullPath(relativePath); // Преобразуем в абсолютный путь
 
-
+       
             ApplicationConfiguration.Initialize();
             long ID = 314627387;//менять
 
-            Application.Run(new Main_page(json_path,ID));
+            Application.Run(new Main_page(absolutePath, ID));
         }
     }
 }
