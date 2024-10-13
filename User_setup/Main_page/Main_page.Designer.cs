@@ -32,16 +32,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_page));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Add_button = new Guna.UI2.WinForms.Guna2GradientButton();
-            Refresh_button = new Guna.UI2.WinForms.Guna2GradientButton();
             Update_button = new Guna.UI2.WinForms.Guna2GradientButton();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
@@ -77,37 +74,16 @@
             Add_button.Location = new Point(12, 441);
             Add_button.Name = "Add_button";
             Add_button.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            Add_button.Size = new Size(75, 50);
+            Add_button.Size = new Size(103, 50);
             Add_button.TabIndex = 1;
             Add_button.Text = "Add";
             Add_button.Click += Add_button_Click_1;
-            // 
-            // Refresh_button
-            // 
-            Refresh_button.AutoRoundedCorners = true;
-            Refresh_button.BorderRadius = 24;
-            Refresh_button.CustomizableEdges = customizableEdges3;
-            Refresh_button.DisabledState.BorderColor = Color.DarkGray;
-            Refresh_button.DisabledState.CustomBorderColor = Color.DarkGray;
-            Refresh_button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            Refresh_button.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
-            Refresh_button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Refresh_button.FillColor = Color.FromArgb(192, 255, 165);
-            Refresh_button.FillColor2 = Color.FromArgb(105, 214, 172);
-            Refresh_button.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic);
-            Refresh_button.ForeColor = Color.Black;
-            Refresh_button.Location = new Point(174, 441);
-            Refresh_button.Name = "Refresh_button";
-            Refresh_button.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            Refresh_button.Size = new Size(75, 50);
-            Refresh_button.TabIndex = 2;
-            Refresh_button.Text = "Refresh";
             // 
             // Update_button
             // 
             Update_button.AutoRoundedCorners = true;
             Update_button.BorderRadius = 24;
-            Update_button.CustomizableEdges = customizableEdges5;
+            Update_button.CustomizableEdges = customizableEdges3;
             Update_button.DisabledState.BorderColor = Color.DarkGray;
             Update_button.DisabledState.CustomBorderColor = Color.DarkGray;
             Update_button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -117,10 +93,10 @@
             Update_button.FillColor2 = Color.FromArgb(105, 214, 172);
             Update_button.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic);
             Update_button.ForeColor = Color.Black;
-            Update_button.Location = new Point(93, 441);
+            Update_button.Location = new Point(121, 441);
             Update_button.Name = "Update_button";
-            Update_button.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            Update_button.Size = new Size(75, 50);
+            Update_button.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            Update_button.Size = new Size(103, 50);
             Update_button.TabIndex = 3;
             Update_button.Text = "Update";
             // 
@@ -203,7 +179,7 @@
             UserName_TextBox.Font = new Font("Segoe UI Black", 18.75F, FontStyle.Bold | FontStyle.Italic);
             UserName_TextBox.Location = new Point(12, 103);
             UserName_TextBox.Name = "UserName_TextBox";
-            UserName_TextBox.Size = new Size(318, 52);
+            UserName_TextBox.Size = new Size(321, 52);
             UserName_TextBox.TabIndex = 9;
             UserName_TextBox.Text = "";
             UserName_TextBox.TextChanged += richTextBox1_TextChanged;
@@ -214,7 +190,7 @@
             Name_TextBox.Font = new Font("Segoe UI Black", 18.75F, FontStyle.Bold | FontStyle.Italic);
             Name_TextBox.Location = new Point(12, 186);
             Name_TextBox.Name = "Name_TextBox";
-            Name_TextBox.Size = new Size(318, 52);
+            Name_TextBox.Size = new Size(321, 52);
             Name_TextBox.TabIndex = 10;
             Name_TextBox.Text = "";
             Name_TextBox.KeyPress += Name_TextBox_KeyPress;
@@ -224,7 +200,7 @@
             Date_TextBox.Font = new Font("Segoe UI Black", 18.75F, FontStyle.Bold | FontStyle.Italic);
             Date_TextBox.Location = new Point(12, 269);
             Date_TextBox.Name = "Date_TextBox";
-            Date_TextBox.Size = new Size(318, 52);
+            Date_TextBox.Size = new Size(321, 52);
             Date_TextBox.TabIndex = 11;
             Date_TextBox.Text = "";
             Date_TextBox.KeyPress += richTextBox3_KeyPress;
@@ -234,7 +210,7 @@
             // 
             Interests_TextBox.Location = new Point(12, 352);
             Interests_TextBox.Name = "Interests_TextBox";
-            Interests_TextBox.Size = new Size(318, 52);
+            Interests_TextBox.Size = new Size(321, 52);
             Interests_TextBox.TabIndex = 12;
             Interests_TextBox.Text = "";
             Interests_TextBox.KeyPress += Interests_TextBox_KeyPress;
@@ -284,7 +260,7 @@
             // 
             Delete_button.AutoRoundedCorners = true;
             Delete_button.BorderRadius = 24;
-            Delete_button.CustomizableEdges = customizableEdges7;
+            Delete_button.CustomizableEdges = customizableEdges5;
             Delete_button.DisabledState.BorderColor = Color.DarkGray;
             Delete_button.DisabledState.CustomBorderColor = Color.DarkGray;
             Delete_button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -294,10 +270,10 @@
             Delete_button.FillColor2 = Color.FromArgb(105, 214, 172);
             Delete_button.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic);
             Delete_button.ForeColor = Color.Black;
-            Delete_button.Location = new Point(255, 441);
+            Delete_button.Location = new Point(230, 441);
             Delete_button.Name = "Delete_button";
-            Delete_button.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            Delete_button.Size = new Size(75, 50);
+            Delete_button.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            Delete_button.Size = new Size(103, 50);
             Delete_button.TabIndex = 17;
             Delete_button.Text = "Delete";
             Delete_button.Click += Delete_button_Click;
@@ -321,7 +297,6 @@
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
             Controls.Add(Update_button);
-            Controls.Add(Refresh_button);
             Controls.Add(Add_button);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Main_page";
@@ -337,7 +312,6 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2GradientButton Add_button;
-        private Guna.UI2.WinForms.Guna2GradientButton Refresh_button;
         private Guna.UI2.WinForms.Guna2GradientButton Update_button;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
