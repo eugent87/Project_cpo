@@ -91,11 +91,18 @@ namespace User_setup
 
         }
 
+
+        //private void Update_tabel()
+        //{
+        //    Data_table.DataSource = get_Data_Table_Class.get_dataTable(this.ID);
+        //    Date_TextBox.Text = Date_TextBox.Text.Substring(0, 10);
+        //}
+
         private void Data_table_Click(object sender, EventArgs e)
         {
             UserName_TextBox.Text = Data_table.SelectedRows[0].Cells[0].Value.ToString();
             Name_TextBox.Text = Data_table.SelectedRows[0].Cells[1].Value.ToString();
-            Date_TextBox.Text = Data_table.SelectedRows[0].Cells[2].Value.ToString();
+            Date_TextBox.Text = Data_table.SelectedRows[0].Cells[2].Value.ToString().Substring(0,10);
             Interests_TextBox.Text = Data_table.SelectedRows[0].Cells[3].Value.ToString();
 
         }
@@ -174,6 +181,13 @@ namespace User_setup
             {
                 e.Handled = true;
             }
+        }
+
+        private void Update_button_Click(object sender, EventArgs e)
+        {
+            Query_class.Update_friend_in_db(connec_Class, UserName_TextBox.Text, Name_TextBox.Text, Date_TextBox.Text, Interests_TextBox.Text, ID);
+            Data_table.DataSource = get_Data_Table_Class.get_dataTable(this.ID);
+
         }
     }
 }

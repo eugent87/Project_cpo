@@ -40,6 +40,7 @@ namespace User_Interface.Main_page
                     command.Parameters.AddWithValue("@telegramId", id);
                     adapter = new MySqlDataAdapter(command);
                     dataTable = new DataTable();
+
                     adapter.Fill(dataTable);
                     return dataTable;
                 }

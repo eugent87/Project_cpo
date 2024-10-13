@@ -99,6 +99,7 @@
             Update_button.Size = new Size(103, 50);
             Update_button.TabIndex = 3;
             Update_button.Text = "Update";
+            Update_button.Click += Update_button_Click;
             // 
             // pictureBox2
             // 

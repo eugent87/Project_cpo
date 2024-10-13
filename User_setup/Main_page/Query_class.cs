@@ -53,6 +53,7 @@ namespace User_Interface.Main_page
             }
         }
 
+
         public static void Add_friend_to_db(Connect_class connect_, string UserName, string Name, string Date, string Interests, long ID)
         {
             
@@ -98,14 +99,19 @@ namespace User_Interface.Main_page
                         return;
                     }
 
-                   
+                    DateTime birthday;
+                    if (!DateTime.TryParse(Date, out birthday))
+                    {
+                        MessageBox.Show("Некорректная дата. Введите дату в формате 'YYYY-MM-DD'.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
-                   
+
                     command.CommandText = insertQuery;
                     command.Parameters.AddWithValue("@telegram_id", ID);
                     command.Parameters.AddWithValue("@friend_username", UserName);
                     command.Parameters.AddWithValue("@name", Name);
-                    command.Parameters.AddWithValue("@birthday", Date); 
+                    command.Parameters.AddWithValue("@birthday", birthday);
                     command.Parameters.AddWithValue("@interests", Interests);
                     command.Parameters.AddWithValue("@is_congratulated", 0);
 
@@ -132,6 +138,56 @@ namespace User_Interface.Main_page
             finally
             {
                 connect_.Close_connect(); 
+            }
+        }
+
+        public static void Update_friend_in_db(Connect_class connect_, string UserName, string Name, string Date, string Interests, long ID)
+        {
+            string query = "UPDATE users SET NAME = @name, birthday = @birthday, interests = @interests " +
+                           "WHERE telegram_id = @telegram_id AND friend_username = @friend_username";
+
+            MySqlConnection connection = connect_.Get_connect();
+
+            MySqlCommand command = new MySqlCommand();
+
+            try
+            {
+                if (connection != null && connection.State == ConnectionState.Open)
+                {
+                    command.Connection = connection;
+                    command.CommandText = query;
+
+                  
+                    command.Parameters.AddWithValue("@telegram_id", ID);
+                    command.Parameters.AddWithValue("@friend_username", UserName);
+                    command.Parameters.AddWithValue("@name", Name);
+                    command.Parameters.AddWithValue("@birthday", Date);
+                    command.Parameters.AddWithValue("@interests", Interests);
+
+                    
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Данные успешно обновлены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Запись не найдена для обновления.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Соединение не открыто. Невозможно выполнить запрос.", "Ошибка соединения", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Ошибка при выполнении запроса: {ex.Message}", "Ошибка запроса", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                connect_.Close_connect(); // Закрываем соединение
             }
         }
     }
