@@ -21,7 +21,7 @@ namespace User_setup
         Connect_class connec_Class = new Connect_class();
 
 
-        public Main_page( long iD)
+        public Main_page(long iD)
         {
             get_Data_Table_Class = new Get_data_table_Class(json_path_class.get_absolut_path(), connec_Class);
             InitializeComponent();
@@ -103,9 +103,11 @@ namespace User_setup
         {
             UserName_TextBox.Text = Data_table.SelectedRows[0].Cells[0].Value.ToString();
             Name_TextBox.Text = Data_table.SelectedRows[0].Cells[1].Value.ToString();
-            Date_TextBox.Text = Data_table.SelectedRows[0].Cells[2].Value.ToString().Substring(0,10);
-            Interests_TextBox.Text = Data_table.SelectedRows[0].Cells[3].Value.ToString();
 
+            string dateValue = Data_table.SelectedRows[0].Cells[2].Value.ToString();
+            Date_TextBox.Text = dateValue.Length >= 10 ? dateValue.Substring(0, 10) : dateValue;
+
+            Interests_TextBox.Text = Data_table.SelectedRows[0].Cells[3].Value.ToString();
         }
 
         private void Delete_button_Click(object sender, EventArgs e)
@@ -188,6 +190,11 @@ namespace User_setup
         {
             Query_class.Update_friend_in_db(connec_Class, UserName_TextBox.Text, Name_TextBox.Text, Date_TextBox.Text, Interests_TextBox.Text, ID);
             Data_table.DataSource = get_Data_Table_Class.get_dataTable(this.ID);
+
+        }
+
+        private void Data_table_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

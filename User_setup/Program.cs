@@ -6,14 +6,11 @@ namespace User_setup
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        
         [STAThread]
         static void Main()
         {
-            string relativePath = "Data/Data_config_for_app.json"; // Относительный путь
-            string absolutePath = Path.GetFullPath(relativePath); // Преобразуем в абсолютный путь
+           
 
        
             ApplicationConfiguration.Initialize();

@@ -40,8 +40,8 @@
             btn_Login = new Button();
             btn_Register = new Button();
             btn_Clear = new Button();
-            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             label3 = new Label();
+            guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Close_button).BeginInit();
             SuspendLayout();
@@ -150,26 +150,6 @@
             btn_Clear.UseVisualStyleBackColor = true;
             btn_Clear.Click += btn_Clear_Click;
             // 
-            // guna2CircleButton1
-            // 
-            guna2CircleButton1.CausesValidation = false;
-            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton1.Enabled = false;
-            guna2CircleButton1.FillColor = Color.FromArgb(192, 255, 165);
-            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
-            guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.ImeMode = ImeMode.Off;
-            guna2CircleButton1.Location = new Point(-149, -39);
-            guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton1.Size = new Size(446, 496);
-            guna2CircleButton1.TabIndex = 10;
-            guna2CircleButton1.Click += guna2CircleButton1_Click;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -181,14 +161,30 @@
             label3.TabIndex = 21;
             label3.Text = "Вход";
             // 
+            // guna2CircleButton2
+            // 
+            guna2CircleButton2.DisabledState.BorderColor = Color.DarkGray;
+            guna2CircleButton2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2CircleButton2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2CircleButton2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2CircleButton2.FillColor = Color.FromArgb(192, 255, 165);
+            guna2CircleButton2.Font = new Font("Segoe UI", 9F);
+            guna2CircleButton2.ForeColor = Color.White;
+            guna2CircleButton2.Location = new Point(-188, -60);
+            guna2CircleButton2.Name = "guna2CircleButton2";
+            guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CircleButton2.Size = new Size(479, 560);
+            guna2CircleButton2.TabIndex = 22;
+            // 
             // Login_page
             // 
             AutoScaleDimensions = new SizeF(7F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             ClientSize = new Size(796, 420);
+            Controls.Add(guna2CircleButton2);
             Controls.Add(label3);
-            Controls.Add(guna2CircleButton1);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Register);
             Controls.Add(btn_Login);
@@ -205,6 +201,7 @@
             Name = "Login_page";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Страница регистрации";
+            Load += Login_page_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)Close_button).EndInit();
             ResumeLayout(false);
@@ -223,7 +220,7 @@
         private Button btn_Login;
         private Button btn_Register;
         private Button btn_Clear;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Label label3;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
     }
 }

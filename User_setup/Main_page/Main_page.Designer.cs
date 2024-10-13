@@ -173,6 +173,7 @@
             Data_table.ThemeStyle.RowsStyle.Height = 25;
             Data_table.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             Data_table.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            Data_table.CellContentClick += Data_table_CellContentClick;
             Data_table.Click += Data_table_Click;
             // 
             // UserName_TextBox

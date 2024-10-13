@@ -30,6 +30,7 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registr_page));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             Close_button = new PictureBox();
             btn_Register = new Button();
@@ -39,6 +40,7 @@
             label1 = new Label();
             txtLogin = new TextBox();
             label3 = new Label();
+            guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)Close_button).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -72,6 +74,9 @@
             Close_button.SizeMode = PictureBoxSizeMode.Zoom;
             Close_button.TabIndex = 12;
             Close_button.TabStop = false;
+            Close_button.Click += Close_button_Click;
+            Close_button.MouseEnter += Close_button_MouseEnter;
+            Close_button.MouseLeave += Close_button_MouseLeave;
             // 
             // btn_Register
             // 
@@ -142,11 +147,28 @@
             label3.TabIndex = 20;
             label3.Text = "Регистрация";
             // 
+            // guna2CircleButton2
+            // 
+            guna2CircleButton2.DisabledState.BorderColor = Color.DarkGray;
+            guna2CircleButton2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2CircleButton2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2CircleButton2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2CircleButton2.FillColor = Color.FromArgb(192, 255, 165);
+            guna2CircleButton2.Font = new Font("Segoe UI", 9F);
+            guna2CircleButton2.ForeColor = Color.White;
+            guna2CircleButton2.Location = new Point(-146, -51);
+            guna2CircleButton2.Name = "guna2CircleButton2";
+            guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CircleButton2.Size = new Size(479, 560);
+            guna2CircleButton2.TabIndex = 23;
+            // 
             // Registr_page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(796, 420);
+            Controls.Add(guna2CircleButton2);
             Controls.Add(label3);
             Controls.Add(btn_Register);
             Controls.Add(txtPassword);
@@ -177,5 +199,6 @@
         private Label label1;
         private TextBox txtLogin;
         private Label label3;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
     }
 }
