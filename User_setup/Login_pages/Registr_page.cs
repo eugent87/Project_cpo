@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using User_setup;
+﻿using User_setup;
 
 namespace User_Interface.Login_pages
 {
@@ -38,7 +29,7 @@ namespace User_Interface.Login_pages
             if (reg)
             {
                 new Login_page().Show();
-                this.Close();
+                this.Hide();
             }
         }
 
@@ -64,11 +55,7 @@ namespace User_Interface.Login_pages
             txtPassword.PasswordChar = '*';
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void Show_pass_CheckedChanged(object sender, EventArgs e)
         {
             if (Show_pass.Checked)
@@ -102,9 +89,6 @@ namespace User_Interface.Login_pages
             }
         }
 
-        private void txt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -173,7 +173,6 @@
             Data_table.ThemeStyle.RowsStyle.Height = 25;
             Data_table.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             Data_table.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            Data_table.CellContentClick += Data_table_CellContentClick;
             Data_table.Click += Data_table_Click;
             // 
             // UserName_TextBox
@@ -184,7 +183,6 @@
             UserName_TextBox.Size = new Size(321, 52);
             UserName_TextBox.TabIndex = 9;
             UserName_TextBox.Text = "";
-            UserName_TextBox.TextChanged += richTextBox1_TextChanged;
             UserName_TextBox.KeyPress += UserName_TextBox_KeyPress;
             // 
             // Name_TextBox
@@ -226,7 +224,6 @@
             Username.Size = new Size(105, 25);
             Username.TabIndex = 13;
             Username.Text = "Username";
-            Username.Click += label1_Click;
             // 
             // Interests
             // 

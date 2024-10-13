@@ -1,4 +1,3 @@
-using System.Windows.Forms;
 using User_Interface;
 using User_Interface.Login_pages;
 
@@ -23,10 +22,7 @@ namespace User_setup
             txtPassword.Clear();
         }
 
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Show_pass_CheckedChanged(object sender, EventArgs e)
         {
@@ -75,8 +71,10 @@ namespace User_setup
             bool login = Login_class.Login(userId, txtPassword.Text, connec_Class);
             if (login)
             {
+                this.Hide();
                 new Main_page(userId).Show();
-                this.Close();
+                
+                
 
             }
             else
@@ -88,16 +86,14 @@ namespace User_setup
 
         private void btn_Register_Click(object sender, EventArgs e)
         {
+            this.Hide();
             new Registr_page().Show();
 
 
 
         }
 
-        private void txtLogin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Login_page_Load(object sender, EventArgs e)
         {
@@ -106,15 +102,7 @@ namespace User_setup
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
         {

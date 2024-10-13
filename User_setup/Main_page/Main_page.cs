@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Management;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
 using User_Interface;
 using User_Interface.Main_page;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+
 
 namespace User_setup
 {
@@ -53,16 +44,7 @@ namespace User_setup
             pictureBox2.BackColor = Color.LightGray;
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+  
         private void richTextBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar))
@@ -87,17 +69,6 @@ namespace User_setup
 
         }
 
-        private void Add_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        //private void Update_tabel()
-        //{
-        //    Data_table.DataSource = get_Data_Table_Class.get_dataTable(this.ID);
-        //    Date_TextBox.Text = Date_TextBox.Text.Substring(0, 10);
-        //}
 
         private void Data_table_Click(object sender, EventArgs e)
         {
@@ -192,9 +163,6 @@ namespace User_setup
 
         }
 
-        private void Data_table_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
     }
 }

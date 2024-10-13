@@ -145,7 +145,7 @@
             label1.Size = new Size(190, 31);
             label1.TabIndex = 24;
             label1.Text = "Telegram ID";
-            label1.Click += label1_Click;
+           
             // 
             // label2
             // 
@@ -175,7 +175,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(224, 23);
             txtPassword.TabIndex = 27;
-            txtPassword.TextChanged += txt_TextChanged;
+            
             // 
             // Registr_page
             // 

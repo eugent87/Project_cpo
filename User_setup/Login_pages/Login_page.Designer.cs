@@ -52,7 +52,7 @@
             txtLogin.Name = "txtLogin";
             txtLogin.Size = new Size(224, 22);
             txtLogin.TabIndex = 0;
-            txtLogin.TextChanged += txtLogin_TextChanged;
+           
             txtLogin.KeyPress += txtLogin_KeyPress;
             // 
             // pictureBox1
@@ -169,7 +169,7 @@
             label1.Size = new Size(190, 31);
             label1.TabIndex = 26;
             label1.Text = "Telegram ID";
-            label1.Click += label1_Click;
+            
             // 
             // txtPassword
             // 
@@ -177,7 +177,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(224, 22);
             txtPassword.TabIndex = 28;
-            txtPassword.TextChanged += txtPassword_TextChanged;
+            
             txtPassword.KeyPress += txtPassword_KeyPress;
             // 
             // Login_page
