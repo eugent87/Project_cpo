@@ -87,7 +87,6 @@ namespace User_Interface.Login_pages
             {
                 if (connection != null && connection.State == System.Data.ConnectionState.Open)
                 {
-                 
                     command.Connection = connection;
                     command.CommandText = checkQuery;
                     command.Parameters.AddWithValue("@ID", ID);
@@ -102,15 +101,13 @@ namespace User_Interface.Login_pages
                     }
                     else
                     {
-                        
-                        command.Parameters.Clear(); 
+                        command.Parameters.Clear();
                         command.CommandText = addUser;
                         command.Parameters.AddWithValue("@telegram_id", ID);
                         command.Parameters.AddWithValue("@PasswordHash", psw);
 
                         command.ExecuteNonQuery();
                         MessageBox.Show("Регистрация успешна.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         return true;
                     }
                 }
@@ -121,7 +118,15 @@ namespace User_Interface.Login_pages
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show($"Ошибка при выполнении запроса: {ex.Message}", "Ошибка запроса", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Проверяем, не связана ли ошибка с дубликатами
+                if (ex.Number == 1062) // Код ошибки MySQL для дубликатов
+                {
+                    MessageBox.Show("Пользователь с таким ID уже существует.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show($"Ошибка при выполнении запроса: {ex.Message}", "Ошибка запроса", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             finally
             {

@@ -23,7 +23,7 @@ namespace User_setup
 
         public Main_page(long iD)
         {
-            get_Data_Table_Class = new Get_data_table_Class(json_path_class.get_absolut_path(), connec_Class);
+            get_Data_Table_Class = new Get_data_table_Class(connec_Class);
             InitializeComponent();
             ID = iD;
         }
@@ -148,7 +148,6 @@ namespace User_setup
 
         private void UserName_TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Запрещаем ввод русских букв (кириллических символов)
             if (char.IsLetter(e.KeyChar) && e.KeyChar >= 'А' && e.KeyChar <= 'я')
             {
                 e.Handled = true;

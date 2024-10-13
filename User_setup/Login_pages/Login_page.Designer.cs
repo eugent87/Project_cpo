@@ -31,10 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_page));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtLogin = new TextBox();
-            label1 = new Label();
             pictureBox1 = new PictureBox();
-            label2 = new Label();
-            txtPassword = new TextBox();
             Close_button = new PictureBox();
             Show_pass = new CheckBox();
             btn_Login = new Button();
@@ -42,6 +39,9 @@
             btn_Clear = new Button();
             label3 = new Label();
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            label2 = new Label();
+            label1 = new Label();
+            txtPassword = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Close_button).BeginInit();
             SuspendLayout();
@@ -53,17 +53,7 @@
             txtLogin.Size = new Size(224, 22);
             txtLogin.TabIndex = 0;
             txtLogin.TextChanged += txtLogin_TextChanged;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Enabled = false;
-            label1.Font = new Font("Verdana", 18.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            label1.Location = new Point(325, 193);
-            label1.Name = "label1";
-            label1.Size = new Size(101, 31);
-            label1.TabIndex = 1;
-            label1.Text = "Логин";
+            txtLogin.KeyPress += txtLogin_KeyPress;
             // 
             // pictureBox1
             // 
@@ -74,25 +64,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Verdana", 18.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(306, 250);
-            label2.Name = "label2";
-            label2.Size = new Size(120, 31);
-            label2.TabIndex = 3;
-            label2.Text = "Пароль";
-            // 
-            // txtPassword
-            // 
-            txtPassword.Location = new Point(432, 259);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(224, 22);
-            txtPassword.TabIndex = 4;
-            txtPassword.UseSystemPasswordChar = true;
             // 
             // Close_button
             // 
@@ -174,8 +145,40 @@
             guna2CircleButton2.Name = "guna2CircleButton2";
             guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton2.Size = new Size(479, 560);
+            guna2CircleButton2.Size = new Size(573, 620);
             guna2CircleButton2.TabIndex = 22;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Verdana", 18.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(225, 250);
+            label2.Name = "label2";
+            label2.Size = new Size(149, 31);
+            label2.TabIndex = 27;
+            label2.Text = "Password";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Verdana", 18.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(184, 192);
+            label1.Name = "label1";
+            label1.Size = new Size(190, 31);
+            label1.TabIndex = 26;
+            label1.Text = "Telegram ID";
+            label1.Click += label1_Click;
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(432, 261);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(224, 22);
+            txtPassword.TabIndex = 28;
+            txtPassword.TextChanged += txtPassword_TextChanged;
+            txtPassword.KeyPress += txtPassword_KeyPress;
             // 
             // Login_page
             // 
@@ -183,6 +186,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             ClientSize = new Size(796, 420);
+            Controls.Add(txtPassword);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(guna2CircleButton2);
             Controls.Add(label3);
             Controls.Add(btn_Clear);
@@ -190,10 +196,7 @@
             Controls.Add(btn_Login);
             Controls.Add(Show_pass);
             Controls.Add(Close_button);
-            Controls.Add(txtPassword);
-            Controls.Add(label2);
             Controls.Add(pictureBox1);
-            Controls.Add(label1);
             Controls.Add(txtLogin);
             Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point, 204);
             FormBorderStyle = FormBorderStyle.None;
@@ -211,10 +214,7 @@
         #endregion
 
         private TextBox txtLogin;
-        private Label label1;
         private PictureBox pictureBox1;
-        private Label label2;
-        private TextBox txtPassword;
         private PictureBox Close_button;
         private CheckBox Show_pass;
         private Button btn_Login;
@@ -222,5 +222,8 @@
         private Button btn_Clear;
         private Label label3;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private Label label2;
+        private Label label1;
+        private TextBox txtPassword;
     }
 }

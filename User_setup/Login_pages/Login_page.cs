@@ -12,6 +12,7 @@ namespace User_setup
         {
 
             InitializeComponent();
+
         }
 
 
@@ -29,13 +30,14 @@ namespace User_setup
 
         private void Show_pass_CheckedChanged(object sender, EventArgs e)
         {
+
             if (Show_pass.Checked)
             {
-                txtPassword.Enabled = false;
+                txtPassword.PasswordChar = '\0';
             }
             else
             {
-                txtLogin.Enabled = true;
+                txtPassword.PasswordChar = '*';
             }
         }
 
@@ -74,6 +76,7 @@ namespace User_setup
             if (login)
             {
                 new Main_page(userId).Show();
+                this.Close();
 
             }
             else
@@ -98,7 +101,40 @@ namespace User_setup
 
         private void Login_page_Load(object sender, EventArgs e)
         {
+            connec_Class.LoadConfig();
+            txtPassword.PasswordChar = '*';
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) && e.KeyChar >= 'À' && e.KeyChar <= 'ÿ')
+            {
+                e.Handled = true;
+            }
+
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

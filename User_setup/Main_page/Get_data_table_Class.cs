@@ -16,10 +16,10 @@ namespace User_Interface.Main_page
         Connect_class connec_Class;
 
 
-        public Get_data_table_Class(string Con_path, Connect_class connec_Class_im)
+        public Get_data_table_Class( Connect_class connec_Class_im)
         {
             this.connec_Class  = connec_Class_im;
-            connec_Class.LoadConfig(Con_path);
+            connec_Class.LoadConfig();
             
         }
 

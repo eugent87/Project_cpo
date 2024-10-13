@@ -57,5 +57,54 @@ namespace User_Interface.Login_pages
         {
             Close_button.BackColor = Color.LightGray;
         }
+
+        private void Registr_page_Load(object sender, EventArgs e)
+        {
+            connect_Class.LoadConfig();
+            txtPassword.PasswordChar = '*';
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Show_pass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Show_pass.Checked)
+            {
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+            }
+        }
+
+        private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) && e.KeyChar >= 'А' && e.KeyChar <= 'я')
+            {
+                e.Handled = true;
+            }
+
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

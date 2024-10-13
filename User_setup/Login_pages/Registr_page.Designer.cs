@@ -34,13 +34,14 @@
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             Close_button = new PictureBox();
             btn_Register = new Button();
-            txtPassword = new TextBox();
-            label2 = new Label();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
             txtLogin = new TextBox();
             label3 = new Label();
             guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            label1 = new Label();
+            label2 = new Label();
+            Show_pass = new CheckBox();
+            txtPassword = new TextBox();
             ((System.ComponentModel.ISupportInitialize)Close_button).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -89,25 +90,6 @@
             btn_Register.UseVisualStyleBackColor = false;
             btn_Register.Click += btn_Register_Click;
             // 
-            // txtPassword
-            // 
-            txtPassword.Location = new Point(465, 256);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(224, 23);
-            txtPassword.TabIndex = 17;
-            txtPassword.UseSystemPasswordChar = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Verdana", 18.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(339, 247);
-            label2.Name = "label2";
-            label2.Size = new Size(120, 31);
-            label2.TabIndex = 16;
-            label2.Text = "Пароль";
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
@@ -118,23 +100,13 @@
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Enabled = false;
-            label1.Font = new Font("Verdana", 18.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            label1.Location = new Point(358, 190);
-            label1.Name = "label1";
-            label1.Size = new Size(101, 31);
-            label1.TabIndex = 14;
-            label1.Text = "Логин";
-            // 
             // txtLogin
             // 
             txtLogin.Location = new Point(465, 198);
             txtLogin.Name = "txtLogin";
             txtLogin.Size = new Size(224, 23);
             txtLogin.TabIndex = 13;
+            txtLogin.KeyPress += txtLogin_KeyPress;
             // 
             // label3
             // 
@@ -156,25 +128,68 @@
             guna2CircleButton2.FillColor = Color.FromArgb(192, 255, 165);
             guna2CircleButton2.Font = new Font("Segoe UI", 9F);
             guna2CircleButton2.ForeColor = Color.White;
-            guna2CircleButton2.Location = new Point(-146, -51);
+            guna2CircleButton2.Location = new Point(-131, -93);
             guna2CircleButton2.Name = "guna2CircleButton2";
             guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton2.Size = new Size(479, 560);
+            guna2CircleButton2.Size = new Size(556, 628);
             guna2CircleButton2.TabIndex = 23;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Verdana", 18.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(214, 190);
+            label1.Name = "label1";
+            label1.Size = new Size(190, 31);
+            label1.TabIndex = 24;
+            label1.Text = "Telegram ID";
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Verdana", 18.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(255, 248);
+            label2.Name = "label2";
+            label2.Size = new Size(149, 31);
+            label2.TabIndex = 25;
+            label2.Text = "Password";
+            // 
+            // Show_pass
+            // 
+            Show_pass.AutoSize = true;
+            Show_pass.Location = new Point(519, 285);
+            Show_pass.Name = "Show_pass";
+            Show_pass.Size = new Size(119, 19);
+            Show_pass.TabIndex = 26;
+            Show_pass.Text = "Показать пароль";
+            Show_pass.UseVisualStyleBackColor = true;
+            Show_pass.CheckedChanged += Show_pass_CheckedChanged;
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(465, 256);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(224, 23);
+            txtPassword.TabIndex = 27;
+            txtPassword.TextChanged += txt_TextChanged;
             // 
             // Registr_page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(796, 420);
+            Controls.Add(txtPassword);
+            Controls.Add(Show_pass);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(guna2CircleButton2);
             Controls.Add(label3);
             Controls.Add(btn_Register);
-            Controls.Add(txtPassword);
-            Controls.Add(label2);
             Controls.Add(pictureBox1);
-            Controls.Add(label1);
             Controls.Add(txtLogin);
             Controls.Add(Close_button);
             Controls.Add(guna2CircleButton1);
@@ -182,6 +197,7 @@
             Name = "Registr_page";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registr";
+            Load += Registr_page_Load;
             ((System.ComponentModel.ISupportInitialize)Close_button).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -193,12 +209,13 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private PictureBox Close_button;
         private Button btn_Register;
-        private TextBox txtPassword;
-        private Label label2;
         private PictureBox pictureBox1;
-        private Label label1;
         private TextBox txtLogin;
         private Label label3;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private Label label1;
+        private Label label2;
+        private CheckBox Show_pass;
+        private TextBox txtPassword;
     }
 }

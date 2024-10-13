@@ -26,7 +26,7 @@ namespace User_Interface
 
         private MySqlConnection connection;
 
-        public void LoadConfig(string filePath)
+        public void LoadConfig()
         {
             // Устанавливаем значения по умолчанию для свойств
             Server = "ERROR";
@@ -37,7 +37,7 @@ namespace User_Interface
 
             try
             {
-                string json = File.ReadAllText(filePath);
+                string json = File.ReadAllText(json_path_class.get_absolut_path());
                 Console.WriteLine($"Содержимое JSON-файла: {json}"); // Логирование содержимого файла
 
                 // Десериализация в новый объект
