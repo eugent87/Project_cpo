@@ -5,11 +5,6 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User_Interface", "User_setup\User_Interface.csproj", "{9536393D-6DC1-472C-9458-73A253ED9514}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F3A4BEF7-FA4A-4379-9C9A-DA89AC3EC51E}"
-	ProjectSection(SolutionItems) = preProject
-		config.json = config.json
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

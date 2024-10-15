@@ -1,13 +1,6 @@
-﻿using Guna.UI2.WinForms;
-using MySql.Data.MySqlClient;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using MySql.Data.MySqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace User_Interface.Main_page
 {
@@ -16,15 +9,18 @@ namespace User_Interface.Main_page
         Connect_class connec_Class;
 
 
-        public Get_data_table_Class(string Con_path)
+        public Get_data_table_Class( Connect_class connec_Class_im)
         {
-            connec_Class = new Connect_class(Con_path);
+            this.connec_Class  = connec_Class_im;
+            connec_Class.LoadConfig();
+            
         }
 
 
 
-        public DataTable get_dataTable(string query)
+        public DataTable get_dataTable(long id)
         {
+            string query = "SELECT friend_username, NAME, birthday,interests FROM users WHERE telegram_id = @telegramId";
             MySqlConnection connection = connec_Class.Get_connect();
             DataTable dataTable ;
             MySqlCommand command ;
@@ -34,8 +30,10 @@ namespace User_Interface.Main_page
                 if (connection != null && connection.State == System.Data.ConnectionState.Open)
                 {
                     command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@telegramId", id);
                     adapter = new MySqlDataAdapter(command);
                     dataTable = new DataTable();
+
                     adapter.Fill(dataTable);
                     return dataTable;
                 }
